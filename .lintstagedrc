@@ -1,0 +1,3 @@
+{
+    “*.js”: [“eslint”, “pretty-quick — staged”, “git add”]
+}
