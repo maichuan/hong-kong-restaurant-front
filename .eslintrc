@@ -3,18 +3,27 @@
     "parserOptions": {
     "sourceType": "module",
     "allowImportExportEverywhere": false,
-    "codeFrame": false
+    "codeFrame": false,
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 2018
 },
 "extends": ["prettier", "plugin:react/recommended"],
 "env": {
     "browser": true,
     "es6": true
 },
+"plugins": [
+    "react"
+],
 "rules": {
     "max-len": ["error", {"code": 100}],
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["warn"],
-    "no-return-assign": ["off"]
+    "no-return-assign": ["off"],
+    "quotes": [ "error", "single"],
+    "semi": ["error", "never"]
   }
 }
