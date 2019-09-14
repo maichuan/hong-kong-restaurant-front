@@ -1,7 +1,7 @@
 {
-    "src/**/*.{js,jsx}": [
-      "eslint",
-      "pretty-quick — staged",
-      "git add"
-    ]
+  "*.js": [
+    "eslint",
+    "pretty-quick — staged",
+    "git add"
+  ]
 }
