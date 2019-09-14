@@ -1,5 +1,5 @@
 {
-  "src/*.js": [
+  "src/**/*.js": [
     "eslint",
     "pretty-quick — staged",
     "git add"
