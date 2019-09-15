@@ -22,6 +22,7 @@
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["warn"],
+    "react/display-name": "off",
     "no-return-assign": ["off"],
     "quotes": [ "error", "single"],
     "semi": ["error", "never"]
