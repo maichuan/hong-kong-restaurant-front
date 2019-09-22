@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Button, Drawer } from 'antd'
 import LeftMenu from './LeftMenu'
 import RightMenu from './RightMenu'
@@ -101,8 +101,20 @@ const Hamburger = styled.div`
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    if (window.location.pathname === '/') {
+      navRef.current.style.position = 'fixed'
+      navRef.current.style.top = 0
+      navRef.current.style.right = 0
+      navRef.current.style.left = 0
+      navRef.current.style.zIndex = 1
+    }
+  })
+
   return (
-    <Nav>
+    <Nav ref={navRef}>
       <Logo>
         <a href="/">logo</a>
       </Logo>

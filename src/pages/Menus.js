@@ -1,7 +1,12 @@
 import React from 'react'
+import MenuList from '../components/menu/MenuList'
 
 const Menus = () => {
-  return <h1>Menu Page Coming Soon...</h1>
+  return (
+    <>
+      <MenuList />
+    </>
+  )
 }
 
 export default Menus
