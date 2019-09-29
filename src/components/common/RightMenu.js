@@ -1,16 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Menu } from 'antd'
+
+const NavButton = styled.a`
+  color: white !important;
+  font-weight: bold;
+`
+const NavMenu = styled(Menu)`
+  background-color: transparent !important;
+`
 
 const RightMenu = () => {
   return (
-    <Menu mode="horizontal">
+    <NavMenu mode="horizontal">
       <Menu.Item key="mail">
-        <a href="/">Signin</a>
+        <NavButton href="/">Signin</NavButton>
       </Menu.Item>
       <Menu.Item key="app">
-        <a href="/">Signup</a>
+        <NavButton href="/">Signup</NavButton>
       </Menu.Item>
-    </Menu>
+    </NavMenu>
   )
 }
 

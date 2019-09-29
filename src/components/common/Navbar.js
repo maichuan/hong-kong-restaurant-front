@@ -110,6 +110,8 @@ const Navbar = () => {
       navRef.current.style.right = 0
       navRef.current.style.left = 0
       navRef.current.style.zIndex = 1
+    } else {
+      navRef.current.style.backgroundColor = 'black'
     }
   })
 

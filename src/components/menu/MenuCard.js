@@ -1,5 +1,5 @@
-import React from 'react'
-import { Card as AntDCard, Badge } from 'antd'
+import React, { useState } from 'react'
+import { Card as AntDCard, Badge, Button } from 'antd'
 import styled from 'styled-components'
 
 const MetaCard = AntDCard.Meta
@@ -16,11 +16,18 @@ const ImageContainer = styled.div`
 const Price = styled(Badge)`
   position: absolute;
   bottom: 10px;
-  right: -8em;
+  right: -30%;
 `
 const Img = styled.img`
   width: 100%;
   height: 250px;
+`
+const AddToCart = styled(Button)`
+  z-index: 0;
+  :hover {
+    color: green !important;
+    border-color: green !important;
+  }
 `
 
 const Image = ({ image, price }) => {
@@ -32,9 +39,21 @@ const Image = ({ image, price }) => {
   )
 }
 const MenuCard = ({ menu }) => {
+  const [cardHover, setCardHover] = useState(false)
   return (
-    <Card hoverable cover={<Image image={menu.image} price={menu.price} />}>
-      <MetaCard title={menu.title} description={menu.description} />
+    <Card
+      hoverable
+      onMouseOver={() => setCardHover(true)}
+      onMouseLeave={() => setCardHover(false)}
+      cover={<Image image={menu.image} price={menu.price} />}
+    >
+      {cardHover ? (
+        <AddToCart type="dashed" shape="round" icon="plus-circle">
+          Add To Cart
+        </AddToCart>
+      ) : (
+        <MetaCard title={menu.title} description={menu.description} />
+      )}
     </Card>
   )
 }
